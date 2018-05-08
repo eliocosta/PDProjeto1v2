@@ -17,7 +17,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nome_disciplina_text"
+        android:hint="@string/aulas_semestre_text"
         android:id="@+id/aulasSemestre" />
 
     <EditText
