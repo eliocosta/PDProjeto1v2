@@ -4,12 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <Button
-        android:onClick="acessarForm"
-        android:text="Informar dados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="1"
+        android:rowCount="2"
+        android:layout_marginTop="100dp"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/descricao_app"
+            android:layout_marginLeft="12dp"/>
+
+        <Button
+            android:onClick="acessarForm"
+            android:text="@string/descricao_btn_inicial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"/>
+    </GridLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logoapp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"/>
 
 </LinearLayout>

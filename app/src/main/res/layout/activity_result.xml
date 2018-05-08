@@ -15,9 +15,8 @@
         android:layout_column="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Algoritmos 1"
+        android:text=""
         android:textSize="25sp"
-        android:layout_gravity="center"
         android:padding="2dp"/>
 
     <TextView
@@ -35,7 +34,7 @@
         android:layout_column="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="80"
+        android:text=""
         android:padding="2dp"
         android:textSize="12sp"/>
 
@@ -54,7 +53,7 @@
         android:layout_column="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
+        android:text=""
         android:padding="2dp"
         android:textSize="12sp"/>
 
@@ -73,7 +72,7 @@
         android:layout_column="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="20"
+        android:text=""
         android:padding="2dp"
         android:textSize="12sp"/>
 
