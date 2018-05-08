@@ -9,9 +9,15 @@
     android:padding="10dp">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/campos_obrigatorios"/>
+
+    <TextView
         android:text="@string/nome_disciplina_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -61,7 +67,12 @@
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calcular" />
+            android:text="Calcular"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"/>
 
     </LinearLayout>
 
