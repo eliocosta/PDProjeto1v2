@@ -7,4 +7,5 @@
     <string name="numero_aulas">Número de aulas:</string>
     <string name="faltas_que_tem">Faltas que já possui:</string>
     <string name="faltas_possiveis">Total de faltas possiveis:</string>
+    <string name="msg_validacao">Preecha todos os campos para continuar!</string>
 </resources>
