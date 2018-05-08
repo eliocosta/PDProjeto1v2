@@ -11,6 +11,7 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        setTitle("Resumo");
 
         Bundle params = getIntent().getExtras();
 
@@ -23,6 +24,12 @@ public class ResultActivity extends AppCompatActivity {
         numero_aulas.setText(params.getString("aulas_semestre"));
         faltas_que_possui.setText(params.getString("faltas_existentes"));
 
-        total_faltas_possiveis.setText("20");
+        Float aulasSemestre = Float.parseFloat(params.getString("aulas_semestre"));
+        Float percentFaltas = Float.parseFloat(params.getString("percent_faltas"));
+        Float faltasExistentes = Float.parseFloat(params.getString("faltas_existentes"));
+
+        Float calculoFaltas = (aulasSemestre * (percentFaltas/100)) - faltasExistentes;
+
+        total_faltas_possiveis.setText(calculoFaltas.toString());
     }
 }

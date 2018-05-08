@@ -8,47 +8,53 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <TextView
+        android:text="@string/nome_disciplina_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nome_disciplina_text"
         android:id="@+id/nomeDisciplina" />
 
+    <TextView
+        android:text="@string/aulas_semestre_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
+        android:inputType="numberSigned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/aulas_semestre_text"
         android:id="@+id/aulasSemestre" />
 
+    <TextView
+        android:text="@string/percent_faltas_possiveis_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
+        android:inputType="numberSigned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/percent_faltas_possiveis_text"
         android:id="@+id/percentFaltasPossiveis" />
 
+    <TextView
+        android:text="@string/faltas_existentes_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
+        android:inputType="numberSigned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/faltas_existentes_text"
         android:id="@+id/faltasJaExistentes" />
-
-
-    <LinearLayout
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
 
     <LinearLayout
         android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <Button
             android:onClick="enviarForm"

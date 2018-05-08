@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ProjetoV2</string>
-    <string name="nome_disciplina_text">Nome da disciplina</string>
-    <string name="aulas_semestre_text">Número de aulas no semestre</string>
-    <string name="percent_faltas_possiveis_text">Porcentagem de faltas possíveis</string>
-    <string name="faltas_existentes_text">Quantas faltas você já tem</string>
+    <string name="nome_disciplina_text">Nome da disciplina*</string>
+    <string name="aulas_semestre_text">Número de aulas no semestre*</string>
+    <string name="percent_faltas_possiveis_text">Porcentagem de faltas possíveis*</string>
+    <string name="faltas_existentes_text">Quantas faltas você já tem*</string>
     <string name="numero_aulas">Número de aulas:</string>
     <string name="faltas_que_tem">Faltas que já possui:</string>
     <string name="faltas_possiveis">Total de faltas possiveis:</string>

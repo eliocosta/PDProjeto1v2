@@ -16,6 +16,7 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+        setTitle("Cadastro");
     }
 
     public void enviarForm(View v){
@@ -32,6 +33,7 @@ public class FormActivity extends AppCompatActivity {
         params.putString("aulas_semestre", txtaulasSemestre.getText().toString());
         params.putString("percent_faltas", txtpercentFaltasPossiveis.getText().toString());
         params.putString("faltas_existentes", txtfaltasJaExistentes.getText().toString());
+
 
         intent.putExtras(params);
         startActivity(intent);
