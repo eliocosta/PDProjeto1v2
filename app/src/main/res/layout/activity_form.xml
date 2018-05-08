@@ -30,7 +30,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/aulasSemestre" />
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/percentFaltasPossiveis" />
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/faltasJaExistentes" />

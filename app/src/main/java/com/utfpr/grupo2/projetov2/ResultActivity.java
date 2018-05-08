@@ -29,7 +29,8 @@ public class ResultActivity extends AppCompatActivity {
         Float faltasExistentes = Float.parseFloat(params.getString("faltas_existentes"));
 
         Float calculoFaltas = (aulasSemestre * (percentFaltas/100)) - faltasExistentes;
+        Integer result = Math.round(calculoFaltas);
 
-        total_faltas_possiveis.setText(calculoFaltas.toString());
+        total_faltas_possiveis.setText(result.toString());
     }
 }
