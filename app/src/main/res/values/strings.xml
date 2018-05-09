@@ -7,7 +7,7 @@
     <string name="numero_aulas">Número de aulas:</string>
     <string name="faltas_que_tem">Faltas que já possui:</string>
     <string name="faltas_possiveis">Faltas que ainda pode ter:</string>
-    <string name="descricao_app">Olá estudante! Use este App para controlar suas faltas e não pegar dp no semetre :p</string>
+    <string name="descricao_app">Olá estudante! Use este App para controlar suas faltas e não pegar dp no semestre :p</string>
     <string name="descricao_btn_inicial">Informar dados</string>
     <string name="campos_obrigatorios">(* Campo obrigatório)</string>
 </resources>
