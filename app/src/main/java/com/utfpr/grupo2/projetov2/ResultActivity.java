@@ -1,11 +1,21 @@
 package com.utfpr.grupo2.projetov2;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
+
+    EditText nomeDisplina;
+    EditText percentFaltas;
+    Button alterar;
+    Cursor cursor;
+    BancoController crud;
+    String codigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,24 +23,13 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         setTitle("Resumo");
 
-        Bundle params = getIntent().getExtras();
+        codigo = this.getIntent().getStringExtra("codigo");
+        crud = new BancoController(getBaseContext());
+        nomeDisplina = (EditText) findViewById(R.id.edtAlterarNomeDisciplina);
+        percentFaltas = (EditText) findViewById(R.id.edtAlterarPercent_Faltas);
 
-        TextView nome_materia = (TextView)findViewById(R.id.nome_disciplina);
-        TextView numero_aulas = (TextView)findViewById(R.id.numero_aulas);
-        TextView faltas_que_possui = (TextView)findViewById(R.id.faltas_que_possui);
-        TextView total_faltas_possiveis = (TextView)findViewById(R.id.total_faltas_possiveis);
-
-        nome_materia.setText(params.getString("nome_disciplina"));
-        numero_aulas.setText(params.getString("aulas_semestre"));
-        faltas_que_possui.setText(params.getString("faltas_existentes"));
-
-        Float aulasSemestre = Float.parseFloat(params.getString("aulas_semestre"));
-        Float percentFaltas = Float.parseFloat(params.getString("percent_faltas"));
-        Float faltasExistentes = Float.parseFloat(params.getString("faltas_existentes"));
-
-        Float calculoFaltas = (aulasSemestre * (percentFaltas/100)) - faltasExistentes;
-        Integer result = Math.round(calculoFaltas);
-
-        total_faltas_possiveis.setText(result.toString());
+        cursor = crud.carregaDadosById(Integer.parseInt(codigo));
+        nomeDisplina.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NOME_DISCIPLINA)));
+        percentFaltas.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.PERCENT_FALTAS)));
     }
 }

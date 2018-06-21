@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 cursor.moveToPosition(position);
 
                 codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.ID));
-                Intent intent = new Intent(MainActivity.this,FormActivity.class);
+                Intent intent = new Intent(MainActivity.this,ResultActivity.class);
                 intent.putExtra("codigo",codigo);
                 startActivity(intent);
             }
