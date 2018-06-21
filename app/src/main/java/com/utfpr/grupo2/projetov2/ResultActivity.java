@@ -15,7 +15,7 @@ public class ResultActivity extends AppCompatActivity {
 
         Bundle params = getIntent().getExtras();
 
-        TextView nome_materia = (TextView)findViewById(R.id.nome_materia);
+        TextView nome_materia = (TextView)findViewById(R.id.nome_disciplina);
         TextView numero_aulas = (TextView)findViewById(R.id.numero_aulas);
         TextView faltas_que_possui = (TextView)findViewById(R.id.faltas_que_possui);
         TextView total_faltas_possiveis = (TextView)findViewById(R.id.total_faltas_possiveis);

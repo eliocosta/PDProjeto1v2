@@ -8,9 +8,12 @@
     <string name="descricao_app">Olá estudante! Use este App para controlar suas faltas e não pegar dp no semestre :p</string>
     <string name="descricao_btn_inicial">Cadastrar nova disciplina</string>
     <string name="campos_obrigatorios">(* Campo obrigatório)</string>
-
     <string name="radio_txt_2018_1">2018/1</string>
     <string name="radio_txt_2018_2">2018/2</string>
     <string name="bt_cadastrar">Cadastrar</string>
     <string name="txt_periodo">Período semestral</string>
+    <string name="txt_alterar_nome_disciplina">Editar nome da disciplina</string>
+    <string name="txt_alterar_porcentagem_aulas">Editar porcentagem de faltas possiveis</string>
+    <string name="txt_btn_editar">Editar</string>
+    <string name="txt_btn_excluir">Excluir Materia</string>
 </resources>

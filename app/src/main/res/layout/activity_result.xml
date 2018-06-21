@@ -5,12 +5,13 @@
     android:id="@+id/grid_tela_resumo"
     android:layout_margin="5dp"
     android:padding="0dp"
-    android:rowCount="4"
+    android:rowCount="8"
     android:columnCount="2"
-    android:background="#C0D9D9">
+    android:background="#C0D9D9"
+    android:layout_gravity="center">
 
     <TextView
-        android:id="@+id/nome_materia"
+        android:id="@+id/nome_disciplina"
         android:layout_row="0"
         android:layout_column="0"
         android:layout_width="wrap_content"
@@ -76,6 +77,51 @@
         android:layout_height="wrap_content"
         android:text=""
         android:padding="5dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:layout_marginBottom="35dp"/>
 
+        <EditText
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_alterar_nome_disciplina"
+            android:id="@+id/edtNomeAlterar"/>
+
+        <EditText
+            android:layout_row="5"
+            android:layout_column="0"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_alterar_porcentagem_aulas"
+            android:id="@+id/edtEmailAlterar"/>
+        <Button
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_btn_editar"
+            android:textSize="24sp"
+            android:onClick="editar"
+            android:id="@+id/btnEditar"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"/>
+        <Button
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_btn_excluir"
+            android:textSize="24sp"
+            android:onClick="excluir"
+            android:id="@+id/btnExcluir"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"/>
 </GridLayout>
