@@ -28,6 +28,19 @@ public class BancoController {
         return "Erro ao inserir no banco";
     }
 
+    public Cursor carregaDadosById(int id){
+        Cursor cursor;
+        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA,CriaBanco.PERCENT_FALTAS};
+        db = banco.getReadableDatabase();
+        String where = CriaBanco.ID + " = " + id;
+        cursor = db.query(CriaBanco.TABELA,campos,where,null,null,null,null,null);
+        if(cursor != null){
+            cursor.moveToNext();
+        }
+        db.close();
+        return cursor;
+    }
+
     public Cursor carregaDados(){
         Cursor cursor;
         String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA};
@@ -40,5 +53,16 @@ public class BancoController {
         }
         db.close();
         return cursor;
+    }
+
+    public void alterarRegistro(int id, String nomeDisciplina, String percentFaltas){
+        db = banco.getReadableDatabase();
+        String where = CriaBanco.ID + " = " + id;
+        ContentValues valores = new ContentValues();
+        valores.put(CriaBanco.NOME_DISCIPLINA,nomeDisciplina);
+        valores.put(CriaBanco.PERCENT_FALTAS,percentFaltas);
+
+        db.update(CriaBanco.TABELA,valores,where,null);
+        db.close();
     }
 }
