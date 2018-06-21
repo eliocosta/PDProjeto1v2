@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class CriaBanco extends SQLiteOpenHelper {
 
     private static final String NOME_BANCO = "controlefaltas.db";
-    private static final String TABELA = "disciplina";
-    private static final String ID = "_id";
-    private static final String NOME_DISCIPLINA = "nome_disciplina";
-    private static final String PERIODO = "periodo";
-    private static final String PERCENT_FALTAS = "percent_faltas";
+    public static final String TABELA = "disciplina";
+    public static final String ID = "_id";
+    public static final String NOME_DISCIPLINA = "nome_disciplina";
+    public static final String PERIODO = "periodo";
+    public static final String PERCENT_FALTAS = "percent_faltas";
     private static final int VERSAO = 1;
 
     public CriaBanco(Context context){
@@ -21,7 +21,7 @@ public class CriaBanco extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE " + TABELA + "( "
-                + ID + "integer primary key autoincrement,"
+                + ID + " integer primary key autoincrement,"
                 + NOME_DISCIPLINA + " text,"
                 + PERIODO + " text,"
                 + PERCENT_FALTAS + " integer)";
