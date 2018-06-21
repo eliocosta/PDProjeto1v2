@@ -27,30 +27,35 @@ public class FormActivity extends AppCompatActivity {
     public boolean enviarForm(View v){
 
         EditText txtnomeDisciplina = (EditText)findViewById(R.id.nomeDisciplina);
-        EditText txtaulasSemestre = (EditText)findViewById(R.id.aulasSemestre);
+        RadioGroup radioSemestre = (RadioGroup)findViewById(R.id.radioSemestre);
         EditText txtpercentFaltasPossiveis = (EditText)findViewById(R.id.percentFaltasPossiveis);
-        EditText txtfaltasJaExistentes = (EditText)findViewById(R.id.faltasJaExistentes);
 
         String nomeDisciplina = txtnomeDisciplina.getText().toString();
-        String aulasSemestre = txtaulasSemestre.getText().toString();
-        String percentFaltasPossiveis = txtpercentFaltasPossiveis.getText().toString();
-        String faltasJaExistentes = txtfaltasJaExistentes.getText().toString();
+        int percentFaltasPossiveis = Integer.parseInt(txtpercentFaltasPossiveis.getText().toString());
 
-        if(nomeDisciplina.equals("") || aulasSemestre.equals("") || percentFaltasPossiveis.equals("") || faltasJaExistentes.equals("")){
-            showMessage("Preecha todos os campos para continuar!");
-            return false;
-        }
+        String periodo = "20181";
 
-        Intent intent = new Intent(this, ResultActivity.class);
-        Bundle params = new Bundle();
+//        if(nomeDisciplina.equals("") || percentFaltasPossiveis.equals("")){
+//            showMessage("Preecha todos os campos para continuar!");
+//            return false;
+//        }
 
-        params.putString("nome_disciplina", nomeDisciplina);
-        params.putString("aulas_semestre", aulasSemestre);
-        params.putString("percent_faltas", percentFaltasPossiveis);
-        params.putString("faltas_existentes", faltasJaExistentes);
+//        Intent intent = new Intent(this, ResultActivity.class);
+//        Bundle params = new Bundle();
+//
+//        params.putString("nome_disciplina", nomeDisciplina);
+//        params.putString("percent_faltas", percentFaltasPossiveis);
+//
+//        intent.putExtras(params);
+//        startActivity(intent);
 
-        intent.putExtras(params);
-        startActivity(intent);
+        BancoController crud = new BancoController(getBaseContext());
+        String resultado = crud.insereDados(nomeDisciplina,periodo,percentFaltasPossiveis);
+        Toast.makeText(getApplicationContext(),resultado,Toast.LENGTH_SHORT).show();
+        finish();
+
+
+
         return true;
     }
 }
