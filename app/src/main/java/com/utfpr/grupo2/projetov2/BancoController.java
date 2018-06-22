@@ -65,4 +65,11 @@ public class BancoController {
         db.update(CriaBanco.TABELA,valores,where,null);
         db.close();
     }
+
+    public void deletaRegistro(int id){
+        String where = CriaBanco.ID + "=" + id;
+        db = banco.getReadableDatabase();
+        db.delete(CriaBanco.TABELA,where,null);
+        db.close();
+    }
 }
