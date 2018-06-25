@@ -30,7 +30,7 @@ public class BancoController {
 
     public Cursor carregaDadosById(int id){
         Cursor cursor;
-        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA,CriaBanco.PERCENT_FALTAS};
+        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA,CriaBanco.PERCENT_FALTAS, CriaBanco.PERIODO};
         db = banco.getReadableDatabase();
         String where = CriaBanco.ID + " = " + id;
         cursor = db.query(CriaBanco.TABELA,campos,where,null,null,null,null,null);
