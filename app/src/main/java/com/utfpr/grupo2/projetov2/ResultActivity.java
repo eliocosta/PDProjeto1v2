@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -39,6 +40,7 @@ public class ResultActivity extends AppCompatActivity {
 
         cursor = crud.carregaDadosById(Integer.parseInt(codigo));
         txtDisciplina.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NOME_DISCIPLINA)));
+        calculoDeAulas(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.PERIODO)));
     }
 
     public void editar(View view){
@@ -51,15 +53,12 @@ public class ResultActivity extends AppCompatActivity {
         finish();
     }
 
-    public void calculoDeAulas(){
-        String campos[] = {CriaBanco.ID ,CriaBanco.PERIODO};
-        db = banco.getReadableDatabase();
-        String where = " = " + CriaBanco.ID;
+    public void calculoDeAulas(String periodo){
 
-        cursor = db.query(CriaBanco.TABELA, campos, where, null, null, null, null, null);
+        Toast.makeText(this,periodo,Toast.LENGTH_LONG).show();
 
         String periodo_1 = ""+numAulas20181;
-        if(cursor.toString().equals("20181")){
+        if(periodo.equals("20181")){
             txtNumeroDeAulas.setText(periodo_1);
         }
     }
