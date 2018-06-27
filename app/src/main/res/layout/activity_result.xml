@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".ResultActivity"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/grid_tela_resumo"
         android:layout_margin="5dp"
-        android:padding="0dp"
-        android:rowCount="8"
+        android:padding="5dp"
+        android:rowCount="5"
         android:columnCount="2"
         android:background="#C0D9D9"
         android:layout_gravity="center">
@@ -27,15 +27,7 @@
             android:text=""
             android:textSize="25sp"
             android:padding="5dp"
-            android:background="#7FC9B8" />
-
-        <Button
-            android:onClick="maisFalta"
-            android:id="@+id/btAddFalta"
-            android:text="+ Falta"
-            android:layout_row="0"
-            android:textAllCaps="false"
-            android:layout_column="1" />
+            android:background="#7FC9B8"/>
 
         <TextView
             android:layout_row="1"
@@ -61,7 +53,7 @@
             android:layout_column="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/faltas_que_tem"
+            android:text="@string/faltas"
             android:padding="5dp"
             android:textSize="18sp"/>
 
@@ -92,46 +84,72 @@
             android:layout_height="wrap_content"
             android:text=""
             android:padding="5dp"
-            android:textSize="18sp"
-            android:layout_marginBottom="35dp"/>
+            android:textSize="18sp"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="maisFalta"
+            android:id="@+id/btAddFalta"
+            android:text="@string/btn_adicionar_falta"
+            android:layout_row="4"
+            android:textAllCaps="false"
+            android:layout_column="0"
+            android:textColor="#FFF"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            android:padding="10dp"/>
     </GridLayout>
 
-    <EditText
+    <LinearLayout
+        android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_alterar_nome_disciplina"
-        android:id="@+id/edtAlterarNomeDisciplina"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_alterar_porcentagem_aulas"
-        android:id="@+id/edtAlterarPercent_Faltas"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_btn_editar"
-        android:textSize="24sp"
-        android:onClick="editar"
-        android:id="@+id/btnEditar"
-        android:background="@color/colorPrimary"
-        android:textAllCaps="false"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#FFF"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_btn_excluir"
-        android:textSize="24sp"
-        android:onClick="excluir"
-        android:id="@+id/btnExcluir"
-        android:background="@color/colorPrimary"
-        android:textAllCaps="false"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#FFF"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_form_editar"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_gravity="center"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_alterar_nome_disciplina"
+            android:id="@+id/edtAlterarNomeDisciplina"/>
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_alterar_porcentagem_aulas"
+            android:id="@+id/edtAlterarPercent_Faltas"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_btn_editar"
+            android:textSize="18sp"
+            android:onClick="editar"
+            android:id="@+id/btnEditar"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_btn_excluir"
+            android:textSize="18sp"
+            android:id="@+id/btnExcluir"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"
+            android:onClick="excluir"/>
+        </LinearLayout>
 </LinearLayout>

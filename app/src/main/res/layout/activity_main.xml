@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -16,17 +16,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Disciplina"
+            android:text="@string/label_disciplina"
             android:layout_weight="1"
-            android:paddingLeft="10dp"/>
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Faltas"
+            android:text="@string/label_faltas"
             android:layout_weight="1"
-            android:paddingLeft="10dp"/>
-
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"/>
     </LinearLayout>
 
     <ListView
@@ -35,15 +36,22 @@
         android:id="@+id/listView">
     </ListView>
 
-    <Button
-        android:onClick="acessarForm"
-        android:layout_gravity="bottom"
+    <LinearLayout
+        android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/descricao_btn_inicial"
-        android:background="@color/colorPrimary"
-        android:textAllCaps="false"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#FFF"/>
+        android:layout_height="match_parent">
+
+        <Button
+            android:onClick="acessarForm"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/descricao_btn_inicial"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF"
+            android:textSize="18sp"/>
+    </LinearLayout>
 </LinearLayout>

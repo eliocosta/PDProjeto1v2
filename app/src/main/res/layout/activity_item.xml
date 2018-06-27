@@ -9,17 +9,17 @@
         android:id="@+id/txtDisciplina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Disciplina"
+        android:text="@string/label_disciplina"
         android:layout_weight="1"
-        android:paddingLeft="10dp"/>
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"/>
 
     <TextView
         android:id="@+id/txtFaltas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
+        android:text="@string/label_faltas"
         android:layout_weight="1"
-        android:paddingLeft="10dp" />
-
-
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"/>
 </LinearLayout>
