@@ -44,7 +44,7 @@ public class BancoController {
 
     public Cursor carregaDados(){
         Cursor cursor;
-        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA};
+        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA,CriaBanco.NUM_FALTAS};
 
         db = banco.getReadableDatabase();
         cursor = db.query(CriaBanco.TABELA,campos,null,null,null,null,null,null);
@@ -70,6 +70,15 @@ public class BancoController {
         String where = CriaBanco.ID + "=" + id;
         db = banco.getReadableDatabase();
         db.delete(CriaBanco.TABELA,where,null);
+        db.close();
+    }
+
+    public void addFalta(int id, int numFalta){
+        db = banco.getReadableDatabase();
+        String where = CriaBanco.ID + " = " + id;
+        ContentValues valores = new ContentValues();
+        valores.put(CriaBanco.NUM_FALTAS,numFalta);
+        db.update(CriaBanco.TABELA,valores,where,null);
         db.close();
     }
 }

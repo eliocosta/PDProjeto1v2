@@ -20,6 +20,7 @@ public class ResultActivity extends AppCompatActivity {
     Cursor cursor;
     BancoController crud;
     String codigo;
+    Integer numFaltas;
     private SQLiteDatabase db;
     private CriaBanco banco;
 
@@ -41,8 +42,7 @@ public class ResultActivity extends AppCompatActivity {
         cursor = crud.carregaDadosById(Integer.parseInt(codigo));
         txtDisciplina.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NOME_DISCIPLINA)));
 
-
-        Integer numFaltas = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NUM_FALTAS)));
+        numFaltas = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NUM_FALTAS)));
         Float percentFaltas = Float.parseFloat(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.PERCENT_FALTAS)));
         Integer numAulas = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NUM_AULAS)));
 
@@ -63,6 +63,11 @@ public class ResultActivity extends AppCompatActivity {
 
     public void excluir(View view){
         crud.deletaRegistro(Integer.parseInt(codigo));
+        finish();
+    }
+
+    public void maisFalta(View view){
+        crud.addFalta(Integer.parseInt(codigo),numFaltas+1);
         finish();
     }
 
