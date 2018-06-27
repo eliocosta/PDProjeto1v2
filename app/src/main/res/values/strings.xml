@@ -2,7 +2,7 @@
     <string name="app_name">ProjetoV2</string>
     <string name="nome_disciplina_text">Nome da disciplina*</string>
     <string name="percent_faltas_possiveis_text">Porcentagem de faltas possíveis*</string>
-    <string name="numero_aulas">Número de aulas:</string>
+    <string name="numero_aulas">Número de aulas do semestre:</string>
     <string name="faltas_que_tem">Faltas que já possui:</string>
     <string name="faltas_possiveis">Faltas que ainda pode ter:</string>
     <string name="descricao_app">Olá estudante! Use este App para controlar suas faltas e não pegar dp no semestre :p</string>
@@ -11,7 +11,7 @@
     <string name="radio_txt_2018_1">2018/1</string>
     <string name="radio_txt_2018_2">2018/2</string>
     <string name="bt_cadastrar">Cadastrar</string>
-    <string name="txt_periodo">Período semestral</string>
+    <string name="txt_total_aulas">Total de aulas da disciplina</string>
     <string name="txt_alterar_nome_disciplina">Editar nome da disciplina</string>
     <string name="txt_alterar_porcentagem_aulas">Editar porcentagem de faltas possiveis</string>
     <string name="txt_btn_editar">Editar</string>

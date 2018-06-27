@@ -27,34 +27,24 @@ public class FormActivity extends AppCompatActivity {
     public boolean enviarForm(View v){
 
         EditText txtnomeDisciplina = (EditText)findViewById(R.id.nomeDisciplina);
-        RadioGroup radioSemestre = (RadioGroup)findViewById(R.id.radioSemestre);
+        EditText txtTotalAulas = (EditText)findViewById(R.id.totalAulas);
         EditText txtpercentFaltasPossiveis = (EditText)findViewById(R.id.percentFaltasPossiveis);
+        EditText txtFaltasInicial = (EditText)findViewById(R.id.faltasIncial);
 
         String nomeDisciplina = txtnomeDisciplina.getText().toString();
+        int faltasInicial = Integer.parseInt(txtFaltasInicial.getText().toString());
         int percentFaltasPossiveis = Integer.parseInt(txtpercentFaltasPossiveis.getText().toString());
-
-        String periodo = "20181";
+        int totalAulas = Integer.parseInt(txtTotalAulas.getText().toString());
 
 //        if(nomeDisciplina.equals("") || percentFaltasPossiveis.equals("")){
 //            showMessage("Preecha todos os campos para continuar!");
 //            return false;
 //        }
 
-//        Intent intent = new Intent(this, ResultActivity.class);
-//        Bundle params = new Bundle();
-//
-//        params.putString("nome_disciplina", nomeDisciplina);
-//        params.putString("percent_faltas", percentFaltasPossiveis);
-//
-//        intent.putExtras(params);
-//        startActivity(intent);
-
         BancoController crud = new BancoController(getBaseContext());
-        String resultado = crud.insereDados(nomeDisciplina,periodo,percentFaltasPossiveis);
+        String resultado = crud.insereDados(nomeDisciplina,totalAulas,faltasInicial,percentFaltasPossiveis);
         Toast.makeText(getApplicationContext(),resultado,Toast.LENGTH_SHORT).show();
         finish();
-
-
 
         return true;
     }

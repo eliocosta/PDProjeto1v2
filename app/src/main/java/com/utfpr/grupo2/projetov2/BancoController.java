@@ -14,11 +14,12 @@ public class BancoController {
         banco = new CriaBanco(context);
     }
 
-    public String insereDados (String nomeDisciplina, String periodo, int percent){
+    public String insereDados (String nomeDisciplina, int totalAulas, int faltas, int percent){
         ContentValues valores = new ContentValues();
         db = banco.getWritableDatabase();
         valores.put(CriaBanco.NOME_DISCIPLINA, nomeDisciplina);
-        valores.put(CriaBanco.PERIODO, periodo);
+        valores.put(CriaBanco.NUM_AULAS, totalAulas);
+        valores.put(CriaBanco.NUM_FALTAS, faltas);
         valores.put(CriaBanco.PERCENT_FALTAS, percent);
         long resultado = db.insert("disciplina",null, valores);
         db.close();
@@ -30,7 +31,7 @@ public class BancoController {
 
     public Cursor carregaDadosById(int id){
         Cursor cursor;
-        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA,CriaBanco.PERCENT_FALTAS, CriaBanco.PERIODO};
+        String [] campos = {CriaBanco.ID,CriaBanco.NOME_DISCIPLINA,CriaBanco.PERCENT_FALTAS, CriaBanco.NUM_AULAS, CriaBanco.NUM_FALTAS};
         db = banco.getReadableDatabase();
         String where = CriaBanco.ID + " = " + id;
         cursor = db.query(CriaBanco.TABELA,campos,where,null,null,null,null,null);
@@ -61,7 +62,6 @@ public class BancoController {
         ContentValues valores = new ContentValues();
         valores.put(CriaBanco.NOME_DISCIPLINA,nomeDisciplina);
         valores.put(CriaBanco.PERCENT_FALTAS,percentFaltas);
-
         db.update(CriaBanco.TABELA,valores,where,null);
         db.close();
     }

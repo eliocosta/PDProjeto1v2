@@ -10,9 +10,10 @@ public class CriaBanco extends SQLiteOpenHelper {
     public static final String TABELA = "disciplina";
     public static final String ID = "_id";
     public static final String NOME_DISCIPLINA = "nome_disciplina";
-    public static final String PERIODO = "periodo";
+    public static final String NUM_AULAS = "periodo";
+    public static final String NUM_FALTAS = "num_faltas";
     public static final String PERCENT_FALTAS = "percent_faltas";
-    private static final int VERSAO = 1;
+    private static final int VERSAO = 3;
 
     public CriaBanco(Context context){
         super(context,NOME_BANCO,null,VERSAO);
@@ -23,7 +24,8 @@ public class CriaBanco extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + TABELA + "( "
                 + ID + " integer primary key autoincrement,"
                 + NOME_DISCIPLINA + " text,"
-                + PERIODO + " text,"
+                + NUM_AULAS + " integer,"
+                + NUM_FALTAS + " integer,"
                 + PERCENT_FALTAS + " integer)";
         db.execSQL(sql);
     }

@@ -14,14 +14,12 @@ public class ResultActivity extends AppCompatActivity {
     EditText nomeDisplina;
     EditText percentFaltas;
     TextView txtDisciplina;
-    TextView txtNumeroDeAulas;
+    TextView txtNumeroDeAulasSemestre;
     TextView txtFaltasQuePossui;
     TextView txtFaltasQuePodeTer;
     Cursor cursor;
     BancoController crud;
     String codigo;
-    private int numAulas20181 = 100;
-    private int numAulas20182 = 120;
     private SQLiteDatabase db;
     private CriaBanco banco;
 
@@ -36,11 +34,26 @@ public class ResultActivity extends AppCompatActivity {
         txtDisciplina = (TextView) findViewById(R.id.nome_disciplina);
         nomeDisplina = (EditText) findViewById(R.id.edtAlterarNomeDisciplina);
         percentFaltas = (EditText) findViewById(R.id.edtAlterarPercent_Faltas);
-        txtNumeroDeAulas = (TextView) findViewById(R.id.numero_aulas);
+        txtNumeroDeAulasSemestre = (TextView) findViewById(R.id.numero_aulas);
+        txtFaltasQuePossui = (TextView) findViewById(R.id.faltas_que_possui);
+        txtFaltasQuePodeTer = (TextView) findViewById(R.id.total_faltas_possiveis);
 
         cursor = crud.carregaDadosById(Integer.parseInt(codigo));
         txtDisciplina.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NOME_DISCIPLINA)));
-        calculoDeAulas(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.PERIODO)));
+
+
+        Integer numFaltas = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NUM_FALTAS)));
+        Float percentFaltas = Float.parseFloat(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.PERCENT_FALTAS)));
+        Integer numAulas = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.NUM_AULAS)));
+
+        txtFaltasQuePossui.setText(numFaltas.toString());
+
+        // Calculo de faltas restantes
+        float totalFaltasPossiveis = (numAulas * (percentFaltas/100));
+        float resultCalculo = totalFaltasPossiveis - numFaltas;
+
+        txtNumeroDeAulasSemestre.setText(Float.toString(numAulas));
+        txtFaltasQuePodeTer.setText(Float.toString(resultCalculo));
     }
 
     public void editar(View view){
@@ -53,13 +66,12 @@ public class ResultActivity extends AppCompatActivity {
         finish();
     }
 
-    public void calculoDeAulas(String periodo){
-
-        Toast.makeText(this,periodo,Toast.LENGTH_LONG).show();
-
-        String periodo_1 = ""+numAulas20181;
-        if(periodo.equals("20181")){
-            txtNumeroDeAulas.setText(periodo_1);
-        }
-    }
+//    public void calculoDeAulas(String periodo){
+//
+//        Toast.makeText(this,periodo,Toast.LENGTH_LONG).show();
+//        String periodo_1 = ""+numAulas20181;
+//        if(periodo.equals("2018/1")){
+//            txtNumeroDeAulasSemestre.setText(periodo_1);
+//        }
+//    }
 }
