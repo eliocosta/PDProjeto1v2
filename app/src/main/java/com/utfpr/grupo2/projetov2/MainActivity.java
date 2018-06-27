@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         BancoController crud = new BancoController(getBaseContext());
         cursor = crud.carregaDados();
 
-        String[] nomeCampos = new String[] {CriaBanco.NOME_DISCIPLINA};
-        int[] idView = new int[] {R.id.txtDisciplina};
+        String[] nomeCampos = new String[] {CriaBanco.NOME_DISCIPLINA,CriaBanco.NUM_FALTAS};
+        int[] idView = new int[] {R.id.txtDisciplina,R.id.txtFaltas};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.activity_item,cursor,nomeCampos,idView,0);
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String codigo;
                 cursor.moveToPosition(position);
+                System.out.println(id);
 
                 codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.ID));
                 Intent intent = new Intent(MainActivity.this,ResultActivity.class);

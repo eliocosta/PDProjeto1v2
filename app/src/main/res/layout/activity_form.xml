@@ -25,31 +25,26 @@
         android:id="@+id/nomeDisciplina" />
 
     <TextView
-        android:text="@string/txt_periodo"
+        android:text="@string/txt_total_aulas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <RadioGroup
-        android:id="@+id/radioSemestre"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp">
+        android:id="@+id/totalAulas" />
 
-        <RadioButton
-            android:id="@+id/radio_2018_1"
-            android:checked="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_txt_2018_1"/>
-        <RadioButton
-            android:layout_marginLeft="20dp"
-            android:id="@+id/radio_2018_2"
-            android:checked="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_txt_2018_2"/>
-    </RadioGroup>
+    <TextView
+        android:text="@string/faltas_que_tem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/faltasIncial" />
 
     <TextView
         android:text="@string/percent_faltas_possiveis_text"

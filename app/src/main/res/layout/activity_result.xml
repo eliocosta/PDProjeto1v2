@@ -29,6 +29,14 @@
             android:padding="5dp"
             android:background="#7FC9B8" />
 
+        <Button
+            android:onClick="maisFalta"
+            android:id="@+id/btAddFalta"
+            android:text="+ Falta"
+            android:layout_row="0"
+            android:textAllCaps="false"
+            android:layout_column="1" />
+
         <TextView
             android:layout_row="1"
             android:layout_column="0"
